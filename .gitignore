@@ -1,1 +1,7 @@
-Puzzler.pro.user
+# Ignore the bazel-bin, bazel-genfiles, etc.
+bazel*
+
+# JetBrains files
+.project
+.idea
+*.iml

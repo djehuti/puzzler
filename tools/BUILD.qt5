@@ -1,0 +1,30 @@
+# Copyright (c) 2018 Ben Cox. See the file LICENSE for license information.
+
+# This project depends on the Qt5 libraries and headers.
+# On Ubuntu 18.04 Bionic Beaver, they are installed in these locations.
+
+cc_library(
+    name = "qt_core",
+    hdrs = glob(["include/x86_64-linux-gnu/qt5/QtCore/**"]),
+    srcs = ["lib/x86_64-linux-gnu/libQt5Core.so"],
+    includes = ["include/x86_64-linux-gnu/qt5"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "qt_widgets",
+    hdrs = glob(["include/x86_64-linux-gnu/qt5/QtWidgets/**"]),
+    srcs = ["lib/x86_64-linux-gnu/libQt5Widgets.so"],
+    includes = ["include/x86_64-linux-gnu/qt5"],
+    deps = [":qt_core"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "qt_gui",
+    hdrs = glob(["include/x86_64-linux-gnu/qt5/QtGui/**"]),
+    srcs = ["lib/x86_64-linux-gnu/libQt5Gui.so"],
+    includes = ["include/x86_64-linux-gnu/qt5"],
+    deps = [":qt_core"],
+    visibility = ["//visibility:public"],
+)

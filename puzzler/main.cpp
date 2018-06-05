@@ -1,5 +1,7 @@
+// Copyright (c) 2018 Ben Cox. See the file LICENSE for license information.
+
 #include "puzzlerwindow.h"
-#include <QApplication>
+#include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
